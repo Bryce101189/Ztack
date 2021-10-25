@@ -18,12 +18,12 @@ string_literal = """ any_character [ any_character ] """
 comment = any_character [ any_character ] ;
 
 group = "(" expression ")" ; 
-optional = "[" expression "]" ; 				Can be used 0 or 1 times
-repetition = "{" expression "}" ; 				Can be used 0 or n times
+optional = "[" expression "]" ;               Can be used 0 or 1 times
+repetition = "{" expression "}" ;             Can be used 0 or n times
 alternation = expression { "|" expression } ;
-special_sequence = "?" comment "?" ; 			This sequence is used to describe the attributes of an expression in plain written language
+special_sequence = "?" comment "?" ;          This sequence is used to describe the attributes of an expression in plain written language
 
-letter = ? any spoken language character ? ; 	e.g. "a".."z" or "A".."Z" in written English
+letter = ? any spoken language character ? ;  e.g. "a".."z" or "A".."Z" in written English
 character = ? any written character ? ;
 any_character = ? any character, including whitespace and/or control characters ? ;
 ```
