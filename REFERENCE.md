@@ -14,8 +14,8 @@ rule = identifier "=" expression ";" [ comment ] ;
 expression = identifier | string_literal | group | optional | repetition | alternation | special_sequence ;
 
 identifier = letter [ character ] ;
-string_literal = """ any_character [ any_character ] """
-comment = any_character [ any_character ] ;
+string_literal = """ any_character { any_character } """ ;
+comment = any_character { any_character } ;
 
 group = "(" expression ")" ; 
 optional = "[" expression "]" ;               Can be used 0 or 1 times
@@ -33,7 +33,7 @@ any_character = ? any character, including whitespace and/or control characters 
 ```ebnf
 program = instruction { instruction } "end" ;
 
-instruction = (( statement | expression ) whitespace { whitespace }) | comment ;
+instruction = ( ( statement | expression ) whitespace { whitespace } ) | comment ;
 
 
 statement = loop | conditional | operation | definition;
